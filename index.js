@@ -1,5 +1,16 @@
-//Lesson 79 Filtering an Array
-const numbers = [1, -1, 2, 3];
+//Lesson 78
+const numbers = [1, -2, 3];
 
-const filtered = numbers.filter(n => n >=0);
-console.log(filtered);
+//проверяет все элементы
+const allPositive = numbers.every (function(value){
+        return value >=0;
+});
+
+
+//проверяет пока не найдет совпадение, затем прерывает
+const allPositive1 = numbers.some (function(value){
+    return value <=0;
+});
+
+console.log(allPositive1);
+

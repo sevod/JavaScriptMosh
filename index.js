@@ -1,16 +1,18 @@
-//Lesson 78 Testing the Elements of an Array
-const numbers = [1, -2, 3];
+//Lesson 80 Mapping an Array
 
-//проверяет все элементы
-const allPositive = numbers.every (function(value){
-        return value >=0;
-});
+const numbers = [1, -1, 2, 3];
 
+//const filtered = numbers.filter(n => n >= 0);
+//const items = filtered.map(n => '<li>' + n + '</li>');
+//const html = '<ul>' + items.join('') + '</ul>';
+//console.log(html);
 
-//проверяет пока не найдет совпадение, затем прерывает
-const allPositive1 = numbers.some (function(value){
-    return value <=0;
-});
+//const filtered = numbers.filter(n => n >= 0);
+const items = numbers
+    .filter(n => n >= 0)
+    .map(n => ({ value: n }))
+    .filter(obj => obj.value > 1)
+    .map(obj => obj.value);
 
-console.log(allPositive1);
+console.log(items);
 

@@ -1,4 +1,4 @@
-//Lesson 78
+//Lesson 78 Testing the Elements of an Array
 const numbers = [1, -2, 3];
 
 //проверяет все элементы

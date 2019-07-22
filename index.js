@@ -1,18 +1,15 @@
-//Lesson 80 Mapping an Array
+//Lesson 81 Reducing an Array
 
 const numbers = [1, -1, 2, 3];
 
-//const filtered = numbers.filter(n => n >= 0);
-//const items = filtered.map(n => '<li>' + n + '</li>');
-//const html = '<ul>' + items.join('') + '</ul>';
-//console.log(html);
+let sum = 0;
+for (let n of numbers) 
+    sum += n;
 
-//const filtered = numbers.filter(n => n >= 0);
-const items = numbers
-    .filter(n => n >= 0)
-    .map(n => ({ value: n }))
-    .filter(obj => obj.value > 1)
-    .map(obj => obj.value);
+console.log(sum);
 
-console.log(items);
+const sum2 = numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0); //0 это с какого числа ведет отсчет accumulator, по умолчанию 0
 
+console.log(sum2);

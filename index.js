@@ -1,15 +1,17 @@
-//Lesson 83 Includes
+//Lesson 84 Except
 
-const numbers = [1, 2, 3, 4, 'a'];
+const numbers = [1, 6, 1, 2, 3, 4];
 
-//console.log(numbers.includes('a'));
+const output = except(numbers, [2, 6]);
 
-console.log(includes(numbers, 'a'));
+console.log(output);
 
-function includes(array, searchElemetn) {
-    for (const key of array) {
-        if (key === searchElemetn)
-            return true;
-    }
-    return false;
+//my
+function except(array, excluded) {
+  for (let i = 0; i < excluded.length; i++) {
+    const element = excluded[i];
+    while (array.indexOf(element) != -1)
+      array.splice(array.indexOf(element),1);}
+  return array;
 }
+

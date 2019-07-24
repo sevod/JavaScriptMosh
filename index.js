@@ -1,15 +1,12 @@
-//Lesson 81 Reducing an Array
+//Lesson 82 exercise 1 Array from Range
 
-const numbers = [1, -1, 2, 3];
+const numbers = arrayFromRange(-10, 4);
 
-let sum = 0;
-for (let n of numbers) 
-    sum += n;
+console.log(numbers);
 
-console.log(sum);
-
-const sum2 = numbers.reduce(
-    (accumulator, currentValue) => accumulator + currentValue,
-    0); //0 это с какого числа ведет отсчет accumulator, по умолчанию 0
-
-console.log(sum2);
+function arrayFromRange(min, max) {
+    let output = [];
+    for (min; min <= max; min++) 
+        output.push(min);               
+    return output;
+}

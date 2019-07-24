@@ -1,12 +1,15 @@
-//Lesson 82 exercise 1 Array from Range
+//Lesson 83 Includes
 
-const numbers = arrayFromRange(-10, 4);
+const numbers = [1, 2, 3, 4, 'a'];
 
-console.log(numbers);
+//console.log(numbers.includes('a'));
 
-function arrayFromRange(min, max) {
-    let output = [];
-    for (min; min <= max; min++) 
-        output.push(min);               
-    return output;
+console.log(includes(numbers, 'a'));
+
+function includes(array, searchElemetn) {
+    for (const key of array) {
+        if (key === searchElemetn)
+            return true;
+    }
+    return false;
 }

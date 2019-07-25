@@ -1,15 +1,23 @@
-//Lesson 87 Get Max
+//Lesson 88 Movies
 
-const numbers = [3, 1, 2, 3, 4, 5, 6, 5];
-console.log (Math.max(...numbers));
+const movies = [
+    { title: 'a', year: 2018, rating: 4.5},
+    { title: 'b', year: 2018, rating: 4.7},
+    { title: 'c', year: 2018, rating: 3},
+    { title: 'd', year: 2017, rating: 4.5}
+]
 
-const count = getMax1(numbers);
 
-console.log(count);
 
-function getMax1(array) {
-    if (array.length === 0) return undefined;
-    return array.reduce((b, a) => (a > b) ? a : b);
-}
+const titles = movies
+    .filter(m => m.year === 2018 && m.rating >= 4)
+    .sort((a, b) => a.rating - b.rating)
+    .reverse()
+    .map(m => m.title)
+
+
+console.log(titles);
+
+
 
 

@@ -1,23 +1,15 @@
-//Lesson 86 Count Occurrences
+//Lesson 87 Get Max
 
-const numbers = [1, 2, 3, 4, 5, 6, 1];
+const numbers = [3, 1, 2, 3, 4, 5, 6, 5];
+console.log (Math.max(...numbers));
 
-const count = countOccurrences(numbers, 2);
+const count = getMax1(numbers);
 
 console.log(count);
 
-function countOccurrences(array, searchElement) {
-    let count = 0;
-    // for (const element of array) 
-    //     if (element === searchElement) 
-    //         count++;    
-    // return count;    
-    count = array.reduce((accumulator, current) => {
-        if (current === searchElement) 
-            accumulator += 1
-        return accumulator;
-        }, 0);
-    return count;
+function getMax1(array) {
+    if (array.length === 0) return undefined;
+    return array.reduce((b, a) => (a > b) ? a : b);
 }
 
 

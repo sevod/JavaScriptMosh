@@ -1,21 +1,12 @@
-//Lesson 92 The Rest Operator
+//Lesson 93 Default Parameters
 
-function sum(...args) {
-    console.log(args);
-    return args.reduce((a, b) => a+b);
+function interest (principal, rate = 3.5, years = 5){
+    // rate = rate || 3.5;
+    // years = years || 5;
+    return principal * rate / 100 * years;
 }
 
-console.log(sum(1, 2, 3, 4, 5));
-
-function sumDiscount(discount, ...prices) {
-    const total = prices.reduce((a, b) => a+b);
-    return total * (1 - discount);
-}
-
-console.log(sum(1, 2, 3, 4, 5));
-console.log(sumDiscount(0.1, 2, 3, 4, 5));
-
-
+console.log(interest(10000, undefined, 6));
 
 
 

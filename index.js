@@ -1,24 +1,18 @@
-//Lesson 89 Function Declarations vs. Expressions
+//Lesson 90 Hoisting
 
+walk(); //там можно
 //Funcion Declaration
 function walk() {
     console.log('walk');
 }
-walk();
 
+//run(); //так нельзя, переменная еще не определена
 //Anonymous Function Expression
 const run = function () {
     console.log('run');
 };
-let move = run;
-move();
 run();
 
-//Named Function Expression
-let run2 = function run2() {
-    console.log('run2');
-};
-run2();
 
 
 

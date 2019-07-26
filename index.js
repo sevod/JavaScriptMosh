@@ -1,19 +1,27 @@
-//Lesson 96 Local vs. Global Scope
+//Lesson 97 Let vs Var
 
-const b = 'Global'; //Эта переменная будет доступна везде
+//var => function-scoped
+//ES6 (ES2015): let, const => block-scoped
 
-function start(){
-    const message = 'hi';
-    if (true){
-        const another = 'bye';
-    }
-    console.log(b); //если раскоментить строку ниже, то в этой функции будет своя b и будет ошибка потому что она объявляется ниже
-    //const b = 'Global2'; 
-    console.log(b);
-    //console.log(another); // переменная отсюда не доступна    
+
+var color = 'red'; 
+console.log(window.color); //данные попали в window
+let age = 30;
+console.log(window.age); //данные не попали в window
+
+//sayHi пападет в window, это плохая практика
+function sayHi(){
+    console.log('hi it window');
+};
+window.sayHi();
+
+function start() {
+    for (var i = 0; i < 5; i++) //var имеет другую область видимость чем let
+        console.log(i);
+    console.log(i);        
 }
-start();
-console.log(b);
 
-//console.log(message); // переменная отсюда не доступна
+start();
+
+console.log(i); //здесь var недоступно
 

@@ -1,17 +1,14 @@
-//Lesson 90 Hoisting
+//Lesson 91 Arguments
 
-walk(); //там можно
-//Funcion Declaration
-function walk() {
-    console.log('walk');
+function sum() {
+    let total = 0;
+    for (const value of arguments) 
+        total += value;      
+    console.log(arguments);
+    return total;
 }
 
-//run(); //так нельзя, переменная еще не определена
-//Anonymous Function Expression
-const run = function () {
-    console.log('run');
-};
-run();
+console.log(sum(1, 2, 3, 4, 5));
 
 
 

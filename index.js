@@ -1,12 +1,25 @@
-//Lesson 93 Default Parameters
+//Lesson 94 Getters and Setters
 
-function interest (principal, rate = 3.5, years = 5){
-    // rate = rate || 3.5;
-    // years = years || 5;
-    return principal * rate / 100 * years;
+const person = {
+    firstName: 'Mosh',
+    lastName: 'Hamedani',
+    get fullName(){
+        return `${person.firstName} ${person.lastName}`;
+    },
+    set fullName(value){
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
 }
 
-console.log(interest(10000, undefined, 6));
+//setters => change (mutate) them
+person.fullName = 'John Smith';
+//getters => access properies
+//console.log(person.fullName);
+console.log(person.fullName);
+
+//console.log(`${person.firstName} ${person.lastName}`)
 
 
 

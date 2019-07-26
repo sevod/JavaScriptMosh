@@ -1,29 +1,19 @@
-//Lesson 95 Try and Catch
+//Lesson 96 Local vs. Global Scope
 
-const person = {
-    firstName: 'Mosh',
-    lastName: 'Hamedani',
-    get fullName(){
-        return `${person.firstName} ${person.lastName}`;
-    },
-    set fullName(value){
-        if (typeof value !== 'string')
-            throw new Error('Value is not a string.'); //тут записывается ошибка, данные о которой идут дальше
-        const parts = value.split(' ');
-        if (parts.length !== 2)
-            throw new Error('Enter a first and last name');
-        this.firstName = parts[0];
-        this.lastName = parts[1];
+const b = 'Global'; //Эта переменная будет доступна везде
+
+function start(){
+    const message = 'hi';
+    if (true){
+        const another = 'bye';
     }
+    console.log(b); //если раскоментить строку ниже, то в этой функции будет своя b и будет ошибка потому что она объявляется ниже
+    //const b = 'Global2'; 
+    console.log(b);
+    //console.log(another); // переменная отсюда не доступна    
 }
+start();
+console.log(b);
 
-try {
-    person.fullName = '';    
-} catch (error) {
-    console.log(error);
-}
-
-
-console.log(person.fullName);
-
+//console.log(message); // переменная отсюда не доступна
 
